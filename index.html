@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script>if (window.module) module = window.module;</script>
+
+    <!-- Moment is used to show a human-readable remaining time -->
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+    
+  </head>
+  <body>
+      <div class="btn-group mainTabPanel" role="group" aria-label="Basic example">
+        <button type="button" data-val="MOVIES_X264" class="btn btn-primary">Movies</button>
+        <button type="button" data-val="TV" class="btn btn-primary">TV Shows</button>
+      </div>
+      <div style="margin: 10px;">
+        <label for="inputSearch">Search</label>
+        <input type="Search" id="inputSearch" class="form-control" >
+        <select class="custom-select catsel" required>
+          <option value="">Open this select menu</option>
+        </select>
+        </div>
+      <div id="searchOutput">
+        <div class="spinner-border text-info" hidden role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="wrapper">
+          
+        </div>
+      </div>
+  <div class="modal" id="videoPopup" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="hero">
+      <div id="output">
+        <div class="video"></div>
+        <div id="progressBar"></div>
+        <!-- The video player will be added here -->
+      </div>
+      <!-- Statistics -->
+      <div id="status">
+        <div>
+          <span class="show-leech">Downloading </span>
+          <span class="show-seed">Seeding </span>
+          <span class="show-leech"> from </span>
+          <span class="show-seed"> to </span>
+          <code id="numPeers">0 peers</code>.
+        </div>
+        <div>
+          <code id="downloaded"></code>
+          of <code id="total"></code>
+          — <span id="remaining"></span><br/>
+          &#x2198;<code id="downloadSpeed">0 b/s</code>
+          / &#x2197;<code id="uploadSpeed">0 b/s</code>
+        </div>
+      </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+    <script src="scripts.js"></script>
+  </body>
+  </html>

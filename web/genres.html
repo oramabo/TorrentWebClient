@@ -1,0 +1,314 @@
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script type="text/javascript">
+		if (typeof module === 'object') {
+			window.module = module;
+			module = undefined;
+		}
+	</script>
+	<title>One Movies an Entertainment Category Flat Bootstrap Responsive Website Template | General :: w3layouts
+	</title>
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="One Movies Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //for-mobile-apps -->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/medile.css" rel='stylesheet' type='text/css' />
+	<link href="css/single.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="css/contactstyle.css" type="text/css" media="all" />
+	<!-- font-awesome icons -->
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<!-- //font-awesome icons -->
+
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- //js -->
+	<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300'
+		rel='stylesheet' type='text/css'>
+	<!-- start-smoth-scrolling -->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+
+	<style>
+		#movieWraper img {
+			max-width: 182px;
+			max-height: 268;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- header -->
+	<div class="header">
+		<div class="container">
+			<div class="w3layouts_logo">
+				<a href="index.html">
+				</a>
+			</div>
+			<div class="w3_search">
+				<form action="#" method="post">
+					<input type="text" name="Search" placeholder="Search" required="">
+					<input type="submit" value="Go">
+				</form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- //header -->
+	<!-- bootstrap-pop-up -->
+	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="title">movie name</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="col-xl-12">
+							<div class="song">
+								<div class="video-grid-single-page-agileits">
+									<div data-video="dLmKio67pVQ" class="" id="moviePlayer">
+										<video preload="auto" width="100%" controls class="">
+											<source  src="js/South.Park.S21E01.720p.BluRay.X264-REWARD.mkv" />
+										</video>
+									</div>
+									<button class="btn btn-primary"> Search subs online </button>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+			</section>
+		</div>
+	</div>
+	</div>
+	<div class="modal settings-modal fade" id="settings" tabindex="-1" role="dialog" aria-labelledby="settings">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="title">Settings</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+				</div>
+				<section>
+					<div class="modal-body">
+							<form>
+								<div class="form-group">
+									<label for="moviePath">Movie Path</label>
+									<input type="text" class="form-control" id="moviePath" placeholder="moviePath">
+								</div>
+								<div class="form-group">
+									<label for="disneyPath">Disney Path</label>
+									<input type="text" class="form-control" id="disneyPath" placeholder="disneyPath">
+								</div>
+								<div class="form-group">
+									<label for="tvPath">TV Path</label>
+									<input type="text" class="form-control" id="tvPath" placeholder="tvPath">
+								</div>
+								<div class="form-group">
+									<button  id="convertAll" class="btn btn-primary prevent">Convert All To mp4 </button>	
+									<button data-toggle="modal" data-target="#pathConvert" id="convertOne" class="btn btn-secondary prevent">Convert one to mp4</button>
+								</div>
+							</form>
+					</div>
+			</div>
+			</section>
+		</div>
+	</div>
+	<div class="modal pathConvert-modal fade" id="pathConvert" tabindex="-1" role="dialog" aria-labelledby="pathConvert">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="title">Settings</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">&times;</span></button>
+					</div>
+					<section>
+						<div class="modal-body">
+							<form>
+								<div class="form-group">
+									<label for="convertPath">Movie Path</label>
+									<input type="text" class="form-control" id="convertPath" placeholder="convertPath">
+								</div>
+							</form>
+						</div>
+				</div>
+				</section>
+			</div>
+	</div>
+
+	<!-- //bootstrap-pop-up -->
+	<!-- nav -->
+	<div class="movies_nav">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+						<nav>
+							<ul class="nav navbar-nav">
+								<li><a class="nenu-item" data-page="disney" href="#" >Disney</a></li>
+								<li><a class="active" href="genres.html">Local Movies</a></li>
+								<li><a class="nenu-item" data-page="localTv"href="#">Local TV</a></li>
+								<li><a class="nenu-item" data-page="TorrentMovies" href="#">Torrents Movies</a></li>
+								<li><a class="nenu-item" data-page="TorrentsTv" href="#">Torrents TV</a></li>
+								<li><a data-toggle="modal" data-target="#settings" id="setting-btn" href="#">Settings</a></li>
+							</ul>
+						</nav>
+					</div>
+			</nav>
+		</div>
+	</div>
+	<!-- //nav -->
+	<!-- /w3l-medile-movies-grids -->
+	<div class="general-agileits-w3l">
+		<div class="w3l-medile-movies-grids">
+
+			<!-- /movie-browse-agile -->
+			<div id="movieWraper" class="container">
+				<div class="browse-inner index1">
+				</div>
+			</div>
+			<!-- //movie-browse-agile -->
+			<!--body wrapper start-->
+			<!--body wrapper start-->
+		</div>
+		<!-- //w3l-medile-movies-grids -->
+	</div>
+	<!-- //comedy-w3l-agileits -->
+	<!-- footer -->
+	<style>
+		.alert-success{    
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			z-index: 999999999;
+		}
+		.hide{
+			display:none;
+		}
+	</style>
+	<div class="alert alert-success hide">
+			<strong>Success!</strong> Movie <span class="name"></span> was converted.
+	</div>
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-5 w3ls_footer_grid1_left">
+				<p>&copy; 2016 One Movies. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a>
+				</p>
+			</div>
+			<div class="col-md-7 w3ls_footer_grid1_right">
+				<ul>
+					<li>
+						<a href="genres.html">Movies</a>
+					</li>
+					<li>
+						<a href="faq.html">FAQ</a>
+					</li>
+					<li>
+						<a href="horror.html">Action</a>
+					</li>
+					<li>
+						<a href="genres.html">Adventure</a>
+					</li>
+					<li>
+						<a href="comedy.html">Comedy</a>
+					</li>
+					<li>
+						<a href="icons.html">Icons</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact Us</a>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- //footer -->
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$(".dropdown").hover(
+				function () {
+					$('.dropdown-menu', this).stop(true, true).slideDown("fast");
+					$(this).toggleClass('open');
+				},
+				function () {
+					$('.dropdown-menu', this).stop(true, true).slideUp("fast");
+					$(this).toggleClass('open');
+				}
+			);
+		});
+	</script>
+	<!-- //Bootstrap Core JavaScript -->
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<script>
+		// You can also require other files to run in this process
+		require(__dirname.replace("web", "") + '/renderer.js')
+	</script>
+	<script type="text/javascript" src="js/subs.js"></script>
+	<script type="text/javascript" src="js/localFiles.js"></script>
+</body>
+
+</html>
