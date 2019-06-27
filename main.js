@@ -8,16 +8,27 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
+<<<<<<< HEAD
     webSecurity: false,
+=======
+    width: 800,
+    height: 600,
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
     webPreferences: {
       nodeIntegration: true,
 
     }
   })
+<<<<<<< HEAD
   mainWindow.maximize();
 
   // and load the index.html of the app.
   mainWindow.loadFile('web/genres.html')
+=======
+
+  // and load the index.html of the app.
+  mainWindow.loadFile('index.html')
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()

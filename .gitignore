@@ -1,5 +1,8 @@
 node_modules
+<<<<<<< HEAD
 *.mkv
 *.mp4
 *.avi
 web/js/South.Park.S21E01.720p.BluRay.X264-REWARD.mkv
+=======
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab

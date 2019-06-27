@@ -1,5 +1,9 @@
 //var torrentId = 'magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fsintel.torrent';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
 // HTML elements
 rarbg = window.rarbg;
 parseTorrent = window.parseTorrent;
@@ -13,7 +17,10 @@ var $total = document.querySelector('#total')
 var $remaining = document.querySelector('#remaining')
 var $uploadSpeed = document.querySelector('#uploadSpeed')
 var $downloadSpeed = document.querySelector('#downloadSpeed')
+<<<<<<< HEAD
 var interval;
+=======
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
 os.login()
     .then(res => {
         console.log(res.token);
@@ -22,6 +29,10 @@ os.login()
     .catch(err => {
         console.log(err);
     });
+<<<<<<< HEAD
+=======
+searchTorrents();
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
 async function getSubs(movieName){
     os.search({	
         sublanguageid: 'heb',       // Can be an array.join, 'all', or be omitted.
@@ -38,6 +49,7 @@ async function getSubs(movieName){
                 var fileUrl =subs.vtt;
                 var output = "subs/" + movieName +".vtt";
                 request({url: fileUrl, encoding: null}, function(err, resp, body) {
+<<<<<<< HEAD
                     if(err) throw err;
                     if(resp.statusCode == 500){
                         fileUrl = subs.url;
@@ -67,10 +79,21 @@ async function getSubs(movieName){
                         });
                     }
                 });
+=======
+                if(err) throw err;
+                fs.writeFile(output, body, function(err) {
+                    console.log("file written!");
+                    var track = `<track label="${subs.filename}" kind="subtitles" srclang="he" src="subs/${movieName}.vtt" default>`
+                    $('#output .video video').append(track);
+                });
+                });
+                     
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
             }
             console.log(s)
     });
 }
+<<<<<<< HEAD
 async function searchTorrents(val){    
     let loader = $('.spinner-border');
     loader.prop("hidden",false);
@@ -82,16 +105,34 @@ async function searchTorrents(val){
         var output = $("#searchOutput > div.wrapper")
         output.html('');
         console.log(`found ${data.length} movies in this catagory`);
+=======
+async function searchTorrents(){    
+    
+    rarbg.list( {
+      sort: 'seeders',
+      category: rarbg.CATEGORY.MOVIES_X264,
+      limit : 100
+    }).then(data => {
+        var output = $("#searchOutput > div")
+        output.html('');
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
         let i = 0;
         for (movie of data){
             if(i % 3 == 0){
                 output.append(`<div class="row row${i}">`);
                 var curRow = `.row${i}`;
             }
+<<<<<<< HEAD
             var li = `<div class="card" data-name="${movie.title.replace(/\./g,' ')}" style="width: 18rem;">
             <img src="#" class="card-img-top" alt="...">
             
             <div  class="card-body">
+=======
+            var li = `<div class="card" style="width: 18rem;">
+            <img src="#" class="card-img-top" alt="...">
+            
+            <div class="card-body">
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
                 <h5>${movie.title}</h5>
                 <p class="card-text" >
                     category : ${movie.category}
@@ -102,6 +143,7 @@ async function searchTorrents(val){
             <a class="startDownload btn btn-primary" Data-link="${movie.download}">Watch now</a>
             </div>
             </div>`;
+<<<<<<< HEAD
 // `	<div class="col-md-2 w3l-movie-gride-agile">
 // <a href="#" class="hvr-shutter-out-horizontal"><img src="" title="${movie.name}" class="img-responsive" alt=" " />
 //     <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
@@ -139,6 +181,11 @@ async function searchTorrents(val){
             i++;
         }
         loader.prop("hidden",true);
+=======
+            output.find(curRow).append(li);
+            i++;
+        }
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
     })
 }
 $('body').delegate(".startDownload","click",(e)=>{
@@ -153,11 +200,16 @@ $('body').delegate(".startDownload","click",(e)=>{
 function downloadTorrent(torrentId) { 
     
     console.log('torrentId: ' + torrentId)
+<<<<<<< HEAD
     for (t of client.torrents ){
         client.remove(t.magnetURI);
     }
     if(interval)
         clearInterval(interval);
+=======
+    for (t of client.torrents )
+        client.remove(t.magnetURI);
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
     client.add(torrentId, function (torrent) {
         console.log(torrent);
         // Torrents can contain many files. Let's use the .mp4 file
@@ -171,12 +223,18 @@ function downloadTorrent(torrentId) {
         })
         client.on('error', function (err) {
             console.error('ERROR: ' + err.message)
+<<<<<<< HEAD
         })
         // Stream the file in the browser
         if (file){
             $('#videoPopup').modal('show');
             $('#videoPopup').find('.modal-title').html(file.name);
 
+=======
+          })
+        // Stream the file in the browser
+        if (file){
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
             $('#output .video').html('');
             file.appendTo('#output .video');
             getSubs(file.name);
@@ -188,7 +246,11 @@ function downloadTorrent(torrentId) {
     
         // Trigger statistics refresh
         torrent.on('done', onDone);
+<<<<<<< HEAD
         interval = setInterval(onProgress, 500);
+=======
+        setInterval(onProgress, 500);
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
         onProgress();
         function onProgress() {
             // Peers
@@ -235,6 +297,7 @@ function prettyBytes(num) {
 }
 
 
+<<<<<<< HEAD
 $('body').delegate('.mainTabPanel button','click',(e)=>{
     let val = $(e.target).data('val');
     let sel  = $('.catsel');
@@ -276,3 +339,6 @@ function initSelect(){
 
 searchTorrents('MOVIES_X264');
 initSelect();
+=======
+
+>>>>>>> 67cca45b032071494e4ddad10b2d734e880dfdab
